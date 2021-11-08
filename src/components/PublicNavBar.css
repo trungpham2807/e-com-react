@@ -1,0 +1,37 @@
+.nav-bar{
+
+}
+.nav-bar .container-fluid{
+    /* background-color: #0F1111; */
+    text-decoration: none;
+}
+
+.container-fluid{
+    /* background-color: black; */
+}
+.nav-link {
+    color: white;
+}
+
+.search-bar{
+    margin-left: 100px;
+}
+
+.info-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+
+}
+.button-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cart-bar{
+    font-size: 24px;
+}
+.fa-shopping-cart{
+    color: white;
+}

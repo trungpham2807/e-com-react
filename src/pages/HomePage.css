@@ -1,0 +1,17 @@
+.product-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 1;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 5px;
+  }
+
+  .home-carousel {
+    width: 100%;
+    z-index: -1;
+    margin-bottom: -200px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  }

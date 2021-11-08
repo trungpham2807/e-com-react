@@ -1,0 +1,9 @@
+.product-card{
+    margin: 20px;
+    /* border-radius: 18px; */
+    /* transition: all .3s cubic-bezier(0,0,.5,1);
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0, 0, 0.5, 1);
+    transition-delay: 0s; */
+}
