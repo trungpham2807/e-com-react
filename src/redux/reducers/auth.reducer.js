@@ -1,7 +1,8 @@
 import * as types from "../constants/auth.constant"
 const initialState = {
     user: null,
-    loading: false
+    loading: false,
+    isAuthenticated: false,
 };
 const authReducer = (state = initialState, action) => {
   const { type, payload } = action;
@@ -9,7 +10,7 @@ const authReducer = (state = initialState, action) => {
     case types.POST_LOGIN_REQUEST:
         return{...state, loading: true}
     case types.POST_LOGIN_SUCCESS:
-        return{...state, user: payload, loading: false}
+        return{...state, user: payload, isAuthenticated: true, loading: false}
     case types.POST_LOGIN_FAIL:
         return{...state, loading: false}
     default:

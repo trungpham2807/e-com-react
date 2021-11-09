@@ -37,9 +37,9 @@ const PublicNavBar = () => {
                         navbarScroll
                     >   <div className = "info-bar">
                         <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/product/macbook">Macbook</Nav.Link>
+                        {/* <Nav.Link href="/product/macbook">Macbook</Nav.Link>
                         <Nav.Link href="/product/Imac">Imac</Nav.Link>
-                        <Nav.Link href="/product/Ipad">Ipad</Nav.Link>
+                        <Nav.Link href="/product/Ipad">Ipad</Nav.Link> */}
                         </div>                   
                     </Nav>
                     <Form className="d-flex">
@@ -64,7 +64,7 @@ const PublicNavBar = () => {
                             </div>
                             <div className = "cart-bar">
                             <Link to={"/cart"}>
-                                <i class="fas fa-shopping-cart"></i>                            
+                                <i class="fas fa-shopping-cart">Cart</i>                            
                             </Link>
                             </div>
                         </div>

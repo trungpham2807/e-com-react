@@ -1,5 +1,5 @@
 import * as types from "../constants/auth.constant";
-import api from "../apiService";
+import api from "../../apiService";
 
 const authAction = {};
 
@@ -23,7 +23,8 @@ authAction.register =
       dispatch({ type: types.POST_LOGIN_REQUEST });
       const res = await api.post("/auth/login", { email, password });
       dispatch({type: types.POST_LOGIN_SUCCESS, payload: res.data.data.user})
-      api.defaults.headers.common["authorization"] = "Bearer" + res.data.data.accessToken;
+      console.log("Access Token receive", res.data.data.accessToken)
+      api.defaults.headers.common["authorization"] = "Bearer " + res.data.data.accessToken;
       localStorage.setItem("token", res.data.data.accessToken)
     } catch (err) {
       console.log(err);

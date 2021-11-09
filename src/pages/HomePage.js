@@ -22,7 +22,7 @@ const HomePage = () => {
     const [query, setQuery] = useState("")
     // const [searchInput, setSearchInput] = useState("");
 
-    // const handleSearchChange = (e) => {
+    // const handleSearchInputChange = (e) => {
     //     setSearchInput(e.target.value);
     //   };
     
@@ -55,6 +55,7 @@ const HomePage = () => {
                 ): (
                     <div>
                     <CarouselComponent />
+
                     <div className="product-list">
                     {products.map((product) => (
                         // pass prop every single product -> Product component

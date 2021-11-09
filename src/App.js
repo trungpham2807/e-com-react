@@ -12,7 +12,6 @@ function App() {
   return (
     <Router>
       <PublicNavBar />
-      {/* <Login /> */}
       <Routes>
         <Route exact path = "/" element = {<HomePage/>} />
         <Route exact path = "/product/:id" element = {<DetailPage/>} />
@@ -20,7 +19,7 @@ function App() {
         <Route exact path = "/login" element = {<Login />}/>
         <Route exact path ="/register" element = {<Register />}/>
         <Route exact path = "/product/:category" element = {<CategoryPage />} />
-        <Route path =  "*" element = {NotFoundPage} />
+        <Route path =  "*" element = {<NotFoundPage />} />
       </Routes>
     </Router>
   );

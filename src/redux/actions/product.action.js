@@ -1,5 +1,5 @@
 import * as types from "../constants/product.constant"
-import api from "../apiService"
+import api from "../../apiService"
 
 // Get product list action
  const getProductList = (pageNum, limit, query) => async (dispatch) => {
@@ -31,7 +31,7 @@ const getSingleProduct = (productId) => async (dispatch) => {
         let url = `${process.env.REACT_APP_BACKEND_API}/products/${productId}`;
         // let url = "http://cs-ecom-be.herokuapp.com/api/products?"
         const res = await api.get(url);
-        console.log(res.data.data, "hahahaaa1")
+        console.log(res.data.data, "data receive")
         dispatch({type: types.GET_SINGLE_PRODUCT_SUCCESS, payload: res.data.data.product})
     }catch(error){
         console.log(error);
@@ -39,8 +39,23 @@ const getSingleProduct = (productId) => async (dispatch) => {
     }
 }
 
+const addReview = ({productId, rating, review}) => async (dispatch) => {
+    dispatch({ type: types.POST_REVIEW_REQUEST, payload: null });
+    try {
+      const {data} = await api.post(`/reviews`, {
+          "productId": [productId],
+          "content": review,
+          "rating": rating,
+    });
+      dispatch({ type: types.POST_REVIEW_SUCCESS, payload: null});
+      dispatch(productAction.getSingleProduct({productId}));
+  } catch (error) {
+      dispatch({ type: types.POST_REVIEW_FAIL, payload: null });
+    }
+  };
 // export all action
 export const productAction = {
     getProductList,
     getSingleProduct,
+    addReview,
 }

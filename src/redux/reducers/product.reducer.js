@@ -4,6 +4,7 @@ const initialState = {
     products: [],
     loading: false,
     selectedProduct: {},
+    reviews: [],
 }
 const productReducer = (state = initialState, action) => {
     const {type, payload} = action;
@@ -34,6 +35,14 @@ const productReducer = (state = initialState, action) => {
             return{
                 ...state, loading: false
             }
+        // POST REVIEW
+        case types.POST_REVIEW_REQUEST:
+            return{...state, loading: true}
+        case types.POST_REVIEW_SUCCESS:
+            return{...state, reviews: payload, loading: false}
+        case types.POST_REVIEW_FAIL:
+            return{...state, loading: false}
+            
         default:
             return state
     }
